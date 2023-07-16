@@ -1,5 +1,6 @@
 "use client"
 
+import Currencies from './Currencies';
 import Drawer from './Drawer'
 import MobileNav from './MobileNav';
 import Table from './Table'
@@ -13,7 +14,7 @@ const Dashboard = () => {
                 <MobileNav />
             </div>
             <article className="relative w-screen h-screen p-10">
-                <header className="border-b border-gray-700 mb-8 lg:flex lg:justify-between lg:items-center lg:mb-5 md:border-0">
+                <header className="border-b border-gray-700 mb-8 lg:flex lg:justify-between lg:items-center lg:mb-5 md:border-0 text-gray-300">
                     <h1 className="dashboard pb-5 text-3xl">
                         Dashboard
                     </h1>
@@ -25,22 +26,23 @@ const Dashboard = () => {
                             </svg>
                             <span className="text-gray-700">search for a token...</span>
                         </div>
-                        <div className="flex items-center rounded-3xl border border-gray-700 px-2 mr-3 text-[.8rem] space-x-2">
+                        {/* <button onClick={currencyChange} className="flex items-center rounded-3xl border border-gray-700 px-2 mr-3 text-[.8rem] space-x-2">
                             <span className="flag"></span>
                             <span className="usd">USD</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
-                        </div>
-                        <div className="rounded-3xl border border-gray-700 flex items-center text-[.8rem] space-x-2 px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
-                            </svg>
+                        </button> */}
+
+                        <Currencies />
+
+                        {/* <button onClick={gasChange} className="rounded-3xl border border-gray-700 flex items-center text-[.8rem] space-x-2 px-2">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gas-pump" class="w-3 h-3 text-gray-300" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M336 448H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm157.2-340.7l-81-81c-6.2-6.2-16.4-6.2-22.6 0l-11.3 11.3c-6.2 6.2-6.2 16.4 0 22.6L416 97.9V160c0 28.1 20.9 51.3 48 55.2V376c0 13.2-10.8 24-24 24s-24-10.8-24-24v-32c0-48.6-39.4-88-88-88h-8V64c0-35.3-28.7-64-64-64H96C60.7 0 32 28.7 32 64v352h288V304h8c22.1 0 40 17.9 40 40v27.8c0 37.7 27 72 64.5 75.9 43 4.3 79.5-29.5 79.5-71.7V152.6c0-17-6.8-33.3-18.8-45.3zM256 192H96V64h160v128z"></path></svg>
                             <span className="">29</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
-                        </div>
+                        </button> */}
                     </div>
                 </header>
                 <div className="">
