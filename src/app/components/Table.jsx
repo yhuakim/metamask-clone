@@ -48,18 +48,18 @@ const Table = () => {
                     </tr>
                 </thead>
                 {document ? document.map((doc, index) => (
-                    <tbody key={index} className="">
-                        <tr className="border-b border-gray-700">
-                            <th scope="row" className="px-6 py-2 font-medium flex flex-col">
+                    <tbody key={index} className="odd:border-b odd:border-t odd:border-gray-700">
+                        <tr className="">
+                            <td className="px-6 py-2 font-medium flex flex-col">
                                 <b className="uppercase">{doc.shortname}</b>
                                 <small className="text-gray-400">{doc.fullname}</small>
-                            </th>
+                            </td>
                             <td className="hidden md:table-cell px-6 py-2">
                                 {doc.percentage}
                             </td>
                             <td className="hidden md:table-cell px-6 py-2">
                                 <p className="">{doc.price[0]}</p>
-                                <small className="text-red-500">{doc.price[1]}</small>
+                                <small className={doc.price && doc.price[1].includes("+") ? "text-green-500" : "text-red-500"}>{doc.price[1]}</small>
                             </td>
                             <td className="px-6 py-2">
                                 <p className="">{doc.balance[0]}</p>

@@ -2,6 +2,7 @@
 
 import Currencies from './Currencies';
 import Drawer from './Drawer'
+import GasPrice from './GasPrice';
 import MobileNav from './MobileNav';
 import Table from './Table'
 const Dashboard = () => {
@@ -18,31 +19,19 @@ const Dashboard = () => {
                     <h1 className="dashboard pb-5 text-3xl">
                         Dashboard
                     </h1>
-                    <div className="hidden lg:flex">
-                        <div className="rounded-3xl flex items-center border border-gray-700 w-60 mr-3 text-[.5rem] space-x-2 px-2 h-8">
+                    <div className="hidden lg:flex space-x-5">
+                        <div className="rounded-3xl flex items-center border border-gray-700 w-60 text-[.5rem] space-x-2 px-2 h-8">
                             {/* search icon */}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-gray-700">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                             </svg>
                             <span className="text-gray-700">search for a token...</span>
                         </div>
-                        {/* <button onClick={currencyChange} className="flex items-center rounded-3xl border border-gray-700 px-2 mr-3 text-[.8rem] space-x-2">
-                            <span className="flag"></span>
-                            <span className="usd">USD</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button> */}
 
                         <Currencies />
 
-                        {/* <button onClick={gasChange} className="rounded-3xl border border-gray-700 flex items-center text-[.8rem] space-x-2 px-2">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gas-pump" class="w-3 h-3 text-gray-300" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M336 448H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm157.2-340.7l-81-81c-6.2-6.2-16.4-6.2-22.6 0l-11.3 11.3c-6.2 6.2-6.2 16.4 0 22.6L416 97.9V160c0 28.1 20.9 51.3 48 55.2V376c0 13.2-10.8 24-24 24s-24-10.8-24-24v-32c0-48.6-39.4-88-88-88h-8V64c0-35.3-28.7-64-64-64H96C60.7 0 32 28.7 32 64v352h288V304h8c22.1 0 40 17.9 40 40v27.8c0 37.7 27 72 64.5 75.9 43 4.3 79.5-29.5 79.5-71.7V152.6c0-17-6.8-33.3-18.8-45.3zM256 192H96V64h160v128z"></path></svg>
-                            <span className="">29</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button> */}
+                        <GasPrice />
+
                     </div>
                 </header>
                 <div className="">
@@ -63,7 +52,7 @@ const Dashboard = () => {
                 </div>
                 <section className="w-full bg-[#1e1f25] mt-10 p-5 rounded-2xl">
                     <div className="utility-btn mb-5">
-                        <div className="flex flex-wrap lg:justify-between">
+                        <div className="flex flex-wrap justify-between items-center">
                             <ul className="w-96 rounded-full flex justify-between items-center border border-gray-700 text-[.9rem] h-8 px-[0.10rem] mb-3">
                                 <li className="rounded-3xl bg-[#25262b] px-[1.20rem] py-[0.20rem]">
                                     <a href="" className="">
