@@ -24,7 +24,7 @@ const Table = () => {
     return (
         <div className="">
             <table className="w-full text-left text-xs">
-                <thead className="text-xs text-gray-400 border-b border-gray-700">
+                <thead className="text-xs text-gray-400 border-b border-slate-300 dark:border-gray-700">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             Token
@@ -48,7 +48,7 @@ const Table = () => {
                     </tr>
                 </thead>
                 {document ? document.map((doc, index) => (
-                    <tbody key={index} className="odd:border-b odd:border-t odd:border-gray-700">
+                    <tbody key={index} className="odd:border-b odd:border-t odd:border-slate-300 dark:odd:border-gray-700">
                         <tr className="">
                             <td className="px-6 py-2 font-medium flex flex-col">
                                 <b className="uppercase">{doc.shortname}</b>
@@ -62,8 +62,8 @@ const Table = () => {
                                 <small className={doc.price && doc.price[1].includes("+") ? "text-green-500" : "text-red-500"}>{doc.price[1]}</small>
                             </td>
                             <td className="px-6 py-2">
-                                <p className="">{doc.balance[0]}</p>
-                                <small className="text-gray-400">{doc.balance[1]}</small>
+                                <p className="">${doc.amount}</p>
+                                <small className="text-gray-400">{doc.quantity}</small>
                             </td>
                         </tr>
                     </tbody>

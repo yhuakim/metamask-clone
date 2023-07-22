@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import DarkmodeToggle from "./DarkmodeToggle";
 
 const MobileNav = () => {
     const [show, setShow] = useState(false)
@@ -9,7 +10,7 @@ const MobileNav = () => {
     return (
         <>
             <div className="w-screen">
-                <div className="flex justify-between items-center p-8 mx-auto bg-[#1e1f25]">
+                <div className="flex justify-between items-center p-8 mx-auto dark:bg-[#1e1f25]">
                     <button className="" onClick={toggleMenu}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class={show ? "hidden" : "w-8 h-8"}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -29,7 +30,7 @@ const MobileNav = () => {
 
 
                 <div className={!show ? "hidden" : "text-gray-400 w-screen h-screen absolute top-0 z-50"}>
-                    <div className="w-full m-2 bg-[#101213]">
+                    <div className="w-full m-2 bg-white dark:bg-[#101213]">
                         <div className="w-full flex space-x-28 md:space-x-48 p-8 border-b border-gray-700">
                             <button className="text-gray-100" onClick={toggleMenu}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class={show ? "w-8 h-8" : "hidden"}>
@@ -117,11 +118,7 @@ const MobileNav = () => {
                                         </span>
                                     </div>
 
-                                    <label class="relative inline-flex items-center cursor-pointer">
-                                        <input type="checkbox" value="" class="sr-only peer" />
-                                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600">
-                                        </div>
-                                    </label>
+                                    <DarkmodeToggle />
                                 </li>
                                 <li className="currency flex justify-between items-center p-3">
                                     <div className="flex items-center space-x-2">
@@ -188,6 +185,7 @@ const MobileNav = () => {
 
                         <footer className="pt-10 px-8">
                             {/* <hr /> */}
+                            <DarkmodeToggle />
                             <span className="flex space-x-2 justify-center items-center py-2">
                                 <small className="">Terms of service</small>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
