@@ -1,4 +1,9 @@
+import BuyCoin from "../../components/BuyCoin";
 
 export default function Buy() {
-    return <h1>Buy</h1>;
+    return (
+        <>
+            <BuyCoin />
+        </>
+    );
 }

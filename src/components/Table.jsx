@@ -2,7 +2,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import getDoument from "../firestore/getDoc";
+import getDoument from "../app/firestore/getDoc";
 
 const Table = () => {
 
