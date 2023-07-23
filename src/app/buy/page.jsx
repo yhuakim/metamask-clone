@@ -1,4 +1,4 @@
-import BuyCoin from "../../components/BuyCoin";
+import BuyCoin from "./BuyCoin";
 
 export default function Buy() {
     return (

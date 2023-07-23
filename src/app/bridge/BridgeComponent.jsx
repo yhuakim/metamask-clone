@@ -1,8 +1,8 @@
 "use client"
 
-import Currency from "./Currency";
-import SearchBar from "./SearchBar";
-import GasPrice from "./GasPrice";
+import Currency from "../../components/Currency";
+import SearchBar from "../../components/SearchBar";
+import GasPrice from "../../components/GasPrice";
 
 export default function BridgeComponent() {
     return (
@@ -14,8 +14,6 @@ export default function BridgeComponent() {
                 <div className="hidden lg:items-center lg:flex space-x-5">
 
                     <SearchBar />
-
-                    {/* <Currencies /> */}
 
                     <Currency />
 

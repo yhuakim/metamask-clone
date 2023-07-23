@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <main className='bg-white lg:flex lg:space-x-20 dark:bg-[#101213]'>
+          <main className='bg-white lg:flex lg:space-x-10 dark:bg-[#101213]'>
             <nav className=''>
               <div className='hidden lg:block bg-white text-gray-700 dark:text-slate-100 dark:bg-[#101213]'>
                 <Drawer />

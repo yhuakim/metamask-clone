@@ -1,4 +1,4 @@
-import BridgeComponent from "../../components/BridgeComponent";
+import BridgeComponent from "./BridgeComponent";
 
 export default function Bridge() {
     return (
