@@ -2,6 +2,7 @@
 
 import Balance from './Balance';
 import Currencies from './Currencies';
+import Currency from './Currency';
 import Drawer from './Drawer'
 import GasPrice from './GasPrice';
 import MobileNav from './MobileNav';
@@ -26,6 +27,8 @@ const Dashboard = () => {
                         <SearchBar />
 
                         <Currencies />
+
+                        <Currency />
 
                         <GasPrice />
 

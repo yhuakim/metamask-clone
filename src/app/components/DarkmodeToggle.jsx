@@ -1,22 +1,30 @@
 "use client"
 import { useState, useEffect } from "react"
+import { useTheme } from 'next-themes'
 //how to toggle theme?
 
 const DarkmodeToggle = () => {
-    const [theme, setTheme] = useState('light')
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme } = useTheme()
+
+    // useEffect only runs on the client, so now we can safely show the UI
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
 
     const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme("dark")
+        if (theme === 'dark') {
+            setTheme('light')
+            console.log(theme);
         } else {
-            setTheme("light")
+            setTheme('dark')
+            console.log(theme);
         }
     }
-    useEffect(() => {
-        const theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        setTheme(theme);
-        toggleTheme()
-    }, []);
 
 
     return (

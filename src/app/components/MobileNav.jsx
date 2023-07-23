@@ -184,8 +184,6 @@ const MobileNav = () => {
                         <hr className="w-full h-px border-0 text-gray-700 z-50" />
 
                         <footer className="pt-10 px-8">
-                            {/* <hr /> */}
-                            <DarkmodeToggle />
                             <span className="flex space-x-2 justify-center items-center py-2">
                                 <small className="">Terms of service</small>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
