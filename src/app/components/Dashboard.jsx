@@ -17,7 +17,7 @@ const Dashboard = () => {
             <div className="w-full lg:hidden">
                 <MobileNav />
             </div>
-            <article className="relative bg-white w-screen h-auto p-10">
+            <article className="relative bg-white w-screen h-auto p-10 dark:bg-[#101213]">
                 <header className="text-slate-700 border-b border-gray-700 mb-8 lg:flex lg:justify-between lg:items-center lg:mb-5 md:border-0 dark:text-gray-300">
                     <h1 className="dashboard pb-5 text-3xl">
                         Dashboard
