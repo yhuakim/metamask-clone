@@ -1,13 +1,17 @@
 'use client'
 
+import { usePathname } from "next/navigation";
 import DarkmodeToggle from "./DarkmodeToggle";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Navigations } from "./Data";
 
 const Drawer = () => {
     const [show, setShow] = useState(true)
     const toggleDrawer = () => {
         setShow(!show);
     }
+    const pathname = usePathname()
+    
     return (
         <aside className="relative group/toggle">
             <button onClick={toggleDrawer} className=" absolute hidden rounded-full p-1 -right-2 top-10 shadow-md group-hover/toggle:block z-20 hover:bg-[#526ed6] hover:text-white hover:cursor-pointer">
@@ -30,56 +34,14 @@ const Drawer = () => {
 
                 <div className="h-56 overflow-auto">
                     <ul className="">
-                        <li className="p-3 items-center hover:bg-[#415bbc] hover:cursor-pointer dark:hover:bg-[#25262b] border-r-4 border-[#415bbc] group">
-                            <a href="/" className="flex items-center space-x-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-[#415bbc] group-hover:text-gray-200">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z" />
-                                </svg>
-                                <span className={show ? "group-hover:text-gray-200" : "hidden"}>Dashboard</span>
+                        {Navigations.map((navItem) => 
+                        (<li className={pathname === navItem.path? "p-3 items-center hover:cursor-pointer dark:hover:bg-[#25262b] border-r-4 border-[#415bbc] group": "p-3 items-center hover:bg-[#415bbc] hover:cursor-pointer dark:hover:bg-[#25262b] group"}>
+                            <a href={navItem.path} className={pathname === navItem.path? "flex items-center space-x-2": "flex items-center space-x-2  group-hover:text-gray-100"}>
+                                <navItem.icon className={pathname === navItem.path? "w-6 h-6 text-[#415bbc]" : "w-6 h-6"}/>
+                                <span className={show ? "" : "hidden"}>{navItem.title}</span>
                             </a>
-                        </li>
-                        <li className="p-3 items-center hover:cursor-pointer dark:hover:bg-[rgb(37,38,43)] hover:bg-[#415bbc] group">
-                            <a href="/buy" className="flex space-x-2 group-hover:text-gray-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span className={show ? "" : "hidden"}>Buy</span>
-                            </a>
-                        </li>
-                        <li className="p-3 items-center hover:cursor-pointer dark:hover:bg-[#25262b] hover:bg-[#415bbc] group">
-                            <a href="/swap" className="flex space-x-2 group-hover:text-gray-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                                </svg>
-                                <span className={show ? "" : 'hidden'}>Swap</span>
-                            </a>
-                        </li>
-                        <li className="p-3 items-center hover:cursor-pointer dark:hover:bg-[#25262b] hover:bg-[#415bbc] group">
-                            <a href="/bridge" className="flex space-x-2 group-hover:text-gray-200">
-                                {/* bridge icon here */}
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
-                                </svg>
-                                <span className={show ? "" : 'hidden'}>Bridge</span>
-                            </a>
-                        </li>
-                        <li className="p-3 items-center hover:cursor-pointer dark:hover:bg-[#26272c] hover:bg-[#415bbc] group">
-                            <a href="/stake" className="flex space-x-2 group-hover:text-gray-200">
-                                {/* stake icon here */}
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                                </svg>
-                                <span className={show ? '' : 'hidden'}>Stake</span>
-                            </a>
-                        </li>
-                        <li className="p-3 items-center hover:cursor-pointer dark:hover:bg-[#25262b] hover:bg-[#415bbc] group">
-                            <a href="/watchlist" className="flex space-x-2 group-hover:text-gray-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                </svg>
-                                <span className={show ? "" : "hidden"}>Watchlist</span>
-                            </a>
-                        </li>
+                        </li>)
+                        )}
                     </ul>
                 </div>
 

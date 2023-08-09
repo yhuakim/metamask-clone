@@ -1,3 +1,4 @@
+import { usePathname, useRouter } from 'next/navigation';
 import Dashboard from '../components/Dashboard'
 
 

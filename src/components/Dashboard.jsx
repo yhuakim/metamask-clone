@@ -1,13 +1,11 @@
 "use client"
 
 import Balance from './Balance';
-import Currencies from './Currencies';
 import Currency from './Currency';
-import Drawer from './Drawer'
 import GasPrice from './GasPrice';
-import MobileNav from './MobileNav';
 import SearchBar from './SearchBar';
 import Table from './Table'
+
 const Dashboard = () => {
     return (
         <article className="relative font-black text-slate-600 bg-white w-full h-auto p-10 dark:text-slate-300 dark:bg-[#101213]">

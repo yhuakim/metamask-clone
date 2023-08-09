@@ -1,8 +1,6 @@
 "use client"
 
-import Currency from "../../components/Currency";
 import SearchBar from "../../components/SearchBar";
-import GasPrice from "../../components/GasPrice";
 import { countries } from '../../country'
 import PageHeader from "@/components/PageHeader";
 
