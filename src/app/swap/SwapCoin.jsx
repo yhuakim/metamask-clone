@@ -3,7 +3,7 @@
 import { coins } from "@/components/Data";
 import PageHeader from "@/components/PageHeader";
 import { useState } from "react";
-import SwapAction from "./swapAction";
+import SwapAction from "../../components/SwapAction";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 
