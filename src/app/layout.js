@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <Providers>
           <main className='bg-white lg:flex lg:space-x-10 dark:bg-[#101213]'>
             <nav className=''>
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
                 <MobileNav />
               </div>
             </nav>
-            <div className='w-full h-screen'>
+            <div className='w-full h-screen bg-white'>
               {children}
             </div>
           </main>
